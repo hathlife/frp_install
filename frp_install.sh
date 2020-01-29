@@ -8,10 +8,12 @@ cd /tmp
  echo "Download complete."
  echo "Unpacking......"
  tar xzf frp_${FRP_VERSION}_linux_amd64.tar.gz
- echo "Installing....."
+ echo "Installing binary files......"
  cp ./frp_${FRP_VERSION}_linux_amd64/frps /usr/bin && chmod +x /usr/bin/frps
  cp ./frp_${FRP_VERSION}_linux_amd64/frpc /usr/bin && chmod +x /usr/bin/frpc
- cp ./frp_${FRP_VERSION}_linux_amd64/frp*.ini /etc/frp
+ echo "Installing configuration files......"
+ test -e /etc/frp/frpc.ini  && echo "Configuration files exist." || echo "Configuration files do not exist. Copy templetes." && cp ./frp_${FRP_VERSION}_linux_amd64/frp*.ini /etc/frp
+ echo "Configuration file is installed to /etc/frp ."
  cp ./frp_${FRP_VERSION}_linux_amd64/systemd/* /lib/systemd/system
  echo "Install complete."
  echo "See https://github.com/fatedier/frp/blob/master/README.md for configuration."
