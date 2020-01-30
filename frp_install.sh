@@ -20,7 +20,7 @@ cd /tmp
  cp ./frp_${FRP_VERSION}_linux_amd64/systemd/* /lib/systemd/system
  echo "Install complete."
  echo "See https://github.com/fatedier/frp/blob/master/README.md for configuration."
- echo "Use \"systemctl start frps\" or \"systemctl start frpc\" to start frpc/frps service."
+ echo "Use \"systemctl start frps\" or \"systemctl start frpc\" to start frpc\frps service."
  #systemctl enable frps
  #systemctl enable frpc
  rm -rf /tmp/frp_${FRP_VERSION}_linux_amd64*
